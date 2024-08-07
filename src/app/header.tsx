@@ -1,5 +1,8 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { OrganizationSwitcher, SignInButton, UserButton } from "@clerk/nextjs";
+import { Unauthenticated } from "convex/react";
 
 export function Header() {
   return (
@@ -9,9 +12,11 @@ export function Header() {
         <div className="flex gap-2">
           <OrganizationSwitcher />
           <UserButton />
-          <SignInButton>
-            <Button variant={"outline"}>Sign In</Button>
-          </SignInButton>
+          <Unauthenticated>
+            <SignInButton>
+              <Button variant={"outline"}>Sign In</Button>
+            </SignInButton>
+          </Unauthenticated>
         </div>
       </div>
     </div>

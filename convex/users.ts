@@ -13,7 +13,7 @@ export async function getUser(
     .first();
 
   if (!user) {
-    throw new Error("User not found");
+    throw new ConvexError("User not found");
   }
 
   return user;
